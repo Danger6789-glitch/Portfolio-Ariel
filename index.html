@@ -1,75 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ariel A. SEHOUBO | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-</head>
 
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+</head>
 <body>
 
-  <nav>
-    <h2>Ariel A. SEHOUBO</h2>
-    <ul>
-      <li><a href="index.html">Accueil</a></li>
+  <nav class="navbar">
+    <div class="nav-brand">
+      <a href="index.html" class="brand-link">
+        <div class="nav-logo-frame">
+          <img src="assets/img/ariel-photo.png" alt="Logo Ariel Sehoubo" class="nav-logo" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Ariel A. SEHOUBO</span>
+          <span class="brand-role">Marketing Digital</span>
+        </div>
+      </a>
+    </div>
+
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">Accueil</a></li>
       <li><a href="projects.html">Projets</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <header class="hero">
+  <main>
+    <section class="hero">
+      <div class="hero-background-shape shape-one"></div>
+      <div class="hero-background-shape shape-two"></div>
 
-<div class="hero-container">
+      <div class="hero-container">
+        <div class="hero-text">
+          <span class="hero-badge">Disponible en alternance</span>
 
-<div class="hero-text">
+          <h1>
+            Ariel A. SEHOUBO
+            <span>Alternant Marketing Digital & Gestion de Projet</span>
+          </h1>
 
-<h1>
-Ariel A. SEHOUBO<br>
-<span>Alternant Marketing Digital & Gestion de Projet</span>
-</h1>
+          <p class="hero-description">
+            Recherche alternance Master E-Marketing / Stratégie Digitale.
+            Passionné par la communication digitale, la création de contenu,
+            la structuration de projets et la mise en valeur de marques et d’initiatives.
+          </p>
 
-<p>Recherche alternance Master E-Marketing / Stratégie Digitale</p>
+          <div class="hero-info">
+            <span>📍 Strasbourg, France</span>
+            <span>📧 ariel3sehoubo@gmail.com</span>
+            <span>📱 06 12 79 83 77</span>
+          </div>
 
-<div class="hero-info">
-<span>📍 Strasbourg, France</span>
-<span>📧 ariel3sehoubo@gmail.com</span>
-<span>📱 06 12 79 83 77</span>
-</div>
+          <div class="buttons">
+            <a class="btn btn-primary" href="projects.html">Voir mes projets</a>
+            <a class="btn btn-secondary" href="assets/Cv/CV-Ariel-SEHOUBO.pdf" download>
+              Télécharger mon CV
+            </a>
+            <a class="btn btn-outline" href="https://linkedin.com/in/ariel-sehoubo-138772272/" target="_blank">
+              LinkedIn
+            </a>
+            <a class="btn btn-outline" href="contact.html">Me contacter</a>
+          </div>
+        </div>
 
-<div class="buttons">
+        <div class="hero-image">
+          <div class="hero-image-frame">
+            <img src="assets/img/ariel-photo.png" alt="Photo Ariel Sehoubo" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<a class="btn" href="projects.html">Voir mes projets</a>
-
-<a class="btn" href="assets/Cv/CV-Ariel-SEHOUBO.pdf" download>
-Télécharger mon CV
-</a>
-
-<a class="btn" href="https://linkedin.com/in/ariel-sehoubo-138772272/" target="_blank">
-LinkedIn
-</a>
-
-<a class="btn" href="contact.html">
-Me contacter
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="assets/img/ariel-photo.png" alt="Photo Ariel Sehoubo">
-
-</div>
-
-</div>
-
-</header>
-
-  <script src="script.js"></script>
 </body>
 </html>
