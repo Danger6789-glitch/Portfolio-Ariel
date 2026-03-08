@@ -46,20 +46,63 @@ body {
   overflow-x: hidden;
 }
 
-/* ========= NAVBAR ========= */
+/* NAVBAR */
 
-.navbar {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 18px 8%;
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid rgba(21, 58, 138, 0.08);
-  backdrop-filter: blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:white;
+border-bottom:1px solid #e5e7eb;
+}
+
+.nav-left{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+/* LOGO ROND */
+
+.nav-logo{
+width:45px;
+height:45px;
+border-radius:50%;
+overflow:hidden;
+border:3px solid #2563eb;
+box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
+
+.nav-logo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.nav-name{
+font-weight:700;
+color:#1e3a8a;
+font-size:16px;
+}
+
+/* MENU */
+
+.nav-menu{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.nav-menu a{
+text-decoration:none;
+color:#1e3a8a;
+font-weight:500;
+transition:0.3s;
+}
+
+.nav-menu a:hover{
+color:#2563eb;
 }
 
 .brand-link {
