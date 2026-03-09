@@ -360,27 +360,6 @@ img {
 }
 
 /* =========================
-   GENERIC SECTION
-========================= */
-.section {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 70px 6%;
-}
-
-.section-title {
-  font-size: 2rem;
-  color: var(--navy);
-  margin-bottom: 12px;
-}
-
-.section-subtitle {
-  color: var(--text-soft);
-  line-height: 1.75;
-  max-width: 700px;
-}
-
-/* =========================
    RESPONSIVE
 ========================= */
 @media (max-width: 1024px) {
