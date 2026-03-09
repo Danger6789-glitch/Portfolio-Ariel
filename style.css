@@ -26,7 +26,7 @@
 
   --shadow-sm: 0 8px 20px rgba(37, 99, 235, 0.08);
   --shadow-md: 0 16px 36px rgba(21, 58, 138, 0.12);
-  --shadow-lg: 0 22px 55px rgba(21, 58, 138, 0.15);
+  --shadow-lg: 0 24px 55px rgba(21, 58, 138, 0.16);
 
   --container: 1200px;
 }
@@ -58,7 +58,6 @@ img {
 ========================= */
 .navbar {
   width: 100%;
-  max-width: 100%;
   padding: 12px 6%;
   display: flex;
   justify-content: space-between;
@@ -397,11 +396,17 @@ img {
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.86);
   border: 1px solid var(--border);
   border-radius: 28px;
   padding: 28px;
   box-shadow: var(--shadow-sm);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .project-header {
@@ -459,30 +464,88 @@ img {
   line-height: 1.7;
 }
 
-.project-gallery {
-  display: grid;
-  gap: 12px;
+/* =========================
+   SLIDER
+========================= */
+.project-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
 }
 
-.gallery-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.gallery-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.gallery-4 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.project-gallery img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 18px;
+.slider-main {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
   border: 1px solid rgba(22, 59, 140, 0.08);
+  background: var(--white);
+}
+
+.slider-image {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.35s ease;
+}
+
+.slider-main:hover .slider-image {
+  transform: scale(1.02);
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(22, 59, 140, 0.75);
+  color: white;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 2;
+  transition: 0.25s ease;
+}
+
+.slider-btn:hover {
+  background: var(--blue);
+}
+
+.slider-btn.prev {
+  left: 12px;
+}
+
+.slider-btn.next {
+  right: 12px;
+}
+
+.slider-thumbs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.thumb {
+  width: 84px;
+  height: 84px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  cursor: pointer;
   box-shadow: var(--shadow-sm);
+  transition: 0.25s ease;
+}
+
+.thumb:hover {
+  transform: translateY(-2px);
+}
+
+.thumb.active {
+  border-color: var(--blue);
+  transform: scale(1.03);
 }
 
 .video-link-wrapper {
@@ -500,8 +563,43 @@ img {
   box-shadow: var(--shadow-sm);
 }
 
-.video-link:hover {
-  transform: translateY(-2px);
+/* =========================
+   LIGHTBOX
+========================= */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.88);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  z-index: 3000;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: min(1000px, 92vw);
+  max-height: 85vh;
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 /* =========================
@@ -522,10 +620,6 @@ img {
 
   .project-content {
     grid-template-columns: 1fr;
-  }
-
-  .gallery-3 {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -558,12 +652,6 @@ img {
 
   .hero-image-frame {
     width: 240px;
-  }
-
-  .gallery-3,
-  .gallery-2,
-  .gallery-4 {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -646,14 +734,13 @@ img {
     font-size: 1.35rem;
   }
 
-  .gallery-3,
-  .gallery-2,
-  .gallery-4 {
-    grid-template-columns: 1fr;
+  .slider-image {
+    height: 260px;
   }
 
-  .project-gallery img {
-    height: 240px;
+  .thumb {
+    width: 68px;
+    height: 68px;
   }
 }
 
@@ -705,7 +792,18 @@ img {
     padding: 18px;
   }
 
-  .project-gallery img {
-    height: 210px;
+  .slider-image {
+    height: 220px;
+  }
+
+  .slider-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.3rem;
+  }
+
+  .thumb {
+    width: 58px;
+    height: 58px;
   }
 }
