@@ -42,81 +42,70 @@
         <span class="hero-badge">Restons en contact</span>
         <h1>Contact</h1>
         <p>
-          Je suis actuellement à la recherche d’une alternance en Master
-          E-Marketing / Stratégie Digitale. Vous pouvez me contacter directement
-          par email, téléphone ou via LinkedIn.
+          Vous pouvez m’écrire directement pour une opportunité d’alternance,
+          une prise de contact professionnelle ou un échange autour de mon profil.
         </p>
       </div>
     </section>
 
     <section class="contact-section">
-      <div class="contact-container">
+      <div class="contact-container-form">
 
-        <div class="contact-intro-card">
+        <div class="contact-info-panel">
           <div class="contact-photo-frame">
             <img src="assets/img/ariel-photo.png" alt="Photo Ariel Sehoubo" />
           </div>
 
-          <div class="contact-intro-text">
-            <h2>Ariel A. SEHOUBO</h2>
-            <p class="contact-role">Alternant Marketing Digital & Gestion de Projet</p>
-            <p class="contact-description">
-              Passionné par la communication digitale, la création de contenu,
-              la stratégie de visibilité, la coordination de projets et la valorisation
-              de marques et d’initiatives à impact.
-            </p>
+          <h2>Ariel A. SEHOUBO</h2>
+          <p class="contact-role">Alternant Marketing Digital & Gestion de Projet</p>
 
-            <div class="contact-badges">
-              <span>📍 Strasbourg, France</span>
-              <span>🎯 Disponible en alternance</span>
-              <span>📚 Master E-Marketing / Stratégie Digitale</span>
-            </div>
+          <div class="contact-badges">
+            <span>📍 Strasbourg, France</span>
+            <span>🎯 Disponible en alternance</span>
+            <span>📚 Master E-Marketing / Stratégie Digitale</span>
+          </div>
+
+          <div class="contact-links-list">
+            <a href="mailto:ariel3sehoubo@gmail.com">📧 ariel3sehoubo@gmail.com</a>
+            <a href="tel:+33612798377">📱 06 12 79 83 77</a>
+            <a href="https://linkedin.com/in/ariel-sehoubo-138772272/" target="_blank">💼 LinkedIn</a>
+            <a href="assets/Cv/CV-Ariel-SEHOUBO.pdf" download>📄 Télécharger mon CV</a>
           </div>
         </div>
 
-        <div class="contact-grid">
+        <div class="contact-form-card">
+          <h2>Envoyez-moi un message</h2>
+          <p>
+            Remplissez ce formulaire pour me contacter directement.
+          </p>
 
-          <article class="contact-card">
-            <div class="contact-card-icon">📧</div>
-            <h3>Email</h3>
-            <p>Pour toute opportunité d’alternance, échange professionnel ou prise de contact.</p>
-            <a href="mailto:ariel3sehoubo@gmail.com" class="contact-link-btn">
-              ariel3sehoubo@gmail.com
-            </a>
-          </article>
+          <form action="https://formspree.io/f/xzdjdjqv" method="POST" class="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Nom</label>
+                <input type="text" id="name" name="name" placeholder="Votre nom" required />
+              </div>
 
-          <article class="contact-card">
-            <div class="contact-card-icon">📱</div>
-            <h3>Téléphone</h3>
-            <p>Disponible pour un échange rapide concernant une alternance ou un entretien.</p>
-            <a href="tel:+33612798377" class="contact-link-btn">
-              06 12 79 83 77
-            </a>
-          </article>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+              </div>
+            </div>
 
-          <article class="contact-card">
-            <div class="contact-card-icon">💼</div>
-            <h3>LinkedIn</h3>
-            <p>Retrouvez mon profil professionnel et mon parcours.</p>
-            <a
-              href="https://linkedin.com/in/ariel-sehoubo-138772272/"
-              target="_blank"
-              class="contact-link-btn"
-            >
-              Voir mon LinkedIn
-            </a>
-          </article>
+            <div class="form-group">
+              <label for="subject">Sujet</label>
+              <input type="text" id="subject" name="subject" placeholder="Sujet du message" required />
+            </div>
 
-          <article class="contact-card">
-            <div class="contact-card-icon">📄</div>
-            <h3>CV</h3>
-            <p>Téléchargez directement mon CV pour consulter mon profil complet.</p>
-            <a href="assets/Cv/CV-Ariel-SEHOUBO.pdf" download class="contact-link-btn">
-              Télécharger mon CV
-            </a>
-          </article>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="7" placeholder="Écrivez votre message ici..." required></textarea>
+            </div>
 
+            <button type="submit" class="submit-btn">Envoyer le message</button>
+          </form>
         </div>
+
       </div>
     </section>
   </main>
