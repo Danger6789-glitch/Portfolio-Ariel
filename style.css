@@ -162,7 +162,182 @@ img {
 }
 
 /* =========================
-   PAGE HERO
+   HOME HERO (page d'accueil)
+========================= */
+.hero {
+  position: relative;
+  padding: 70px 6% 90px;
+  overflow: hidden;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 1;
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Formes décoratives en arrière-plan */
+.hero-background-shape {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.55;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.shape-one {
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.35), transparent 70%);
+  top: -120px;
+  right: -80px;
+}
+
+.shape-two {
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(22, 59, 140, 0.28), transparent 70%);
+  bottom: -150px;
+  left: -110px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Le badge "Disponible en alternance" est déjà stylé plus bas,
+   on lui donne juste sa marge dans le hero */
+.hero .hero-badge {
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 4.5vw, 3.4rem);
+  color: var(--navy);
+  line-height: 1.12;
+  margin-bottom: 18px;
+}
+
+.hero h1 span {
+  display: block;
+  font-size: clamp(1rem, 1.9vw, 1.35rem);
+  font-weight: 600;
+  color: var(--blue);
+  margin-top: 10px;
+}
+
+.hero-description {
+  max-width: 560px;
+  color: var(--text-soft);
+  line-height: 1.8;
+  font-size: 1.02rem;
+  margin-bottom: 22px;
+}
+
+.hero-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.hero-info span {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 9px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Boutons */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 13px 22px;
+  border-radius: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background 0.25s ease, color 0.25s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--navy), var(--blue));
+  color: var(--white);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--navy);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border: 1.5px solid var(--navy);
+}
+
+.btn-outline:hover {
+  background: var(--navy);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+/* Image du hero */
+.hero-image {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-frame {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 30px;
+  padding: 12px;
+  background: linear-gradient(145deg, rgba(37, 99, 235, 0.14), rgba(22, 59, 140, 0.18));
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-image-frame img {
+  width: 100%;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+/* =========================
+   PAGE HERO (Projets / Contact)
 ========================= */
 .page-hero {
   padding: 58px 6% 24px;
@@ -549,6 +724,36 @@ img {
 /* =========================
    RESPONSIVE
 ========================= */
+@media (max-width: 992px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
+
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-info,
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .hero-image-frame {
+    max-width: 320px;
+  }
+}
+
 @media (max-width: 900px) {
   .contact-container-form {
     grid-template-columns: 1fr;
@@ -567,6 +772,10 @@ img {
   .nav-menu {
     gap: 16px;
     flex-wrap: wrap;
+  }
+
+  .hero {
+    padding: 48px 5% 64px;
   }
 
   .page-hero,
@@ -589,6 +798,10 @@ img {
   .form-row {
     grid-template-columns: 1fr;
   }
+
+  .btn {
+    flex: 1 1 auto;
+  }
 }
 
 @media (max-width: 480px) {
@@ -607,6 +820,24 @@ img {
 
   .brand-role {
     font-size: 0.62rem;
+  }
+
+  .hero-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-info span {
+    width: 100%;
+    text-align: center;
+  }
+
+  .buttons {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
   }
 
   .slider-image {
